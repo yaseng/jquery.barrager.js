@@ -9,7 +9,7 @@
 |github|https://github.com/yaseng/jquery.barrager.js|
 
  Jquery.barrager.js 是一款优雅的网页弹幕插件,支持显示图片,文字以及超链接。支持速度、高度、颜色、数量等自定义。能轻松集成到论坛,博客等网站中。
-
+![demo_1](https://raw.githubusercontent.com/yaseng/jquery.barrager.js/master/screenshot/demo_1.gif)
 ## 文档
 ### 使用
 #### 发布弹幕
@@ -28,9 +28,6 @@ var item={
  }
 $('body').barrager(item);
 ```
-效果如图
-![demo_1](media/14604379311756/demo_1.gif)￼
-
 
 #### 清除所有弹幕
 
@@ -116,7 +113,7 @@ function do_barrager(){
 }
 ```
 效果如图
-![demo_3](media/14604379311756/demo_3.gif)￼
+![demo_3](https://raw.githubusercontent.com/yaseng/jquery.barrager.js/master/screenshot/demo_3.gif)￼
 
 第二种模式示范代码。
 server 端 (php)
@@ -203,7 +200,7 @@ function  barrager(){
 });
 ```
 效果如图
-![demo_2](media/14604379311756/demo_2.gif)￼
+![demo_2](https://raw.githubusercontent.com/yaseng/jquery.barrager.js/master/screenshot/demo_2.gif)￼
 
 
 
