@@ -7,8 +7,8 @@ jquery.barrager.js 专业的网页弹幕插件
       * [兼容低版本ie](#兼容低版本ie)
   * [集成](#集成)
       * [通用后端](#通用后端)
-      * [discuz](#discuz)
-      * [WordPress](#WordPress)
+      * [Discuz](#discuz)
+      * [WordPress](#wordpress)
   * [暂未实现](#暂未实现)  
 
 基本信息
