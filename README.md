@@ -1,5 +1,4 @@
 # jquery.barrager.js 专业的网页弹幕插件
-[toc]
 ## 基本信息
 | 名称 | jquery.barrager.js |
 | -----|----|
@@ -8,8 +7,10 @@
 |下载|https://github.com/yaseng/jquery.barrager.js|
 |github|https://github.com/yaseng/jquery.barrager.js|
 
- Jquery.barrager.js 是一款优雅的网页弹幕插件,支持显示图片,文字以及超链接。支持速度、高度、颜色、数量等自定义。能轻松集成到论坛,博客等网站中。
 ![demo_1](https://raw.githubusercontent.com/yaseng/jquery.barrager.js/master/screenshot/demo_1.gif)
+
+ Jquery.barrager.js 是一款优雅的网页弹幕插件,支持显示图片,文字以及超链接。支持速度、高度、颜色、数量等自定义。能轻松集成到论坛,博客等网站中。
+ 
 ## 文档
 ### 使用
 #### 发布弹幕
@@ -37,6 +38,7 @@ $('body').barrager(item);
 ####  兼容低版本ie
 ie 浏览器小于9不兼容css 圆角,采用兼容样式,可单独设置弹幕的颜色,属性为old_ie_color,建议不要与网页主背景色相同。
 兼容模式效果图
+
 ![ie](https://raw.githubusercontent.com/yaseng/jquery.barrager.js/master/screenshot/ie.png)￼
 
 
