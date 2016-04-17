@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Jquery.barrager.js 专业的网页弹幕插件</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="dist/css/barrager.css">
+    <link rel="stylesheet" type="text/css" href="static/pick-a-color/css/pick-a-color-1.2.3.min.css">
+    <link type="text/css" rel="stylesheet" href="static/syntaxhighlighter/styles/shCoreDefault.css"/>
+</head>
+<body class="bb-js">
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a  class="navbar-brand navbar-brand-active" href="./">Jquery.barrager.js</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-bb-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./#custom">自定义</a></li>
+                    <li><a href="./#usage">使用</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">集成 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="./#general-server">通用集成</a></li>
+                          <li><a href="./#discuz">Discuz</a></li>
+                          <li><a href="./#wordpress">Wordpress</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./#update">版本</a></li>
+                    <li><a href="./#discuss">讨论</a></li>
+                    <li><a href="http://www.uauc.net" target="_blank">UaUc</a></li>
+                    <li><a href="http://www.yaseng.org" target="_blank">Yaseng</a></li>
+                </ul>
+                <!--
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="./documentation.html">API Documentation</a>
+                    </li>
+                </ul>
+                -->
+            </div>
+        </div>
+    </div>
+    <div id="content" class="bb-docs-header" tabindex="-1">
+        <div class="container text-center">
+            <div class="bb-masthead">
+                <h1>Jquery.barrager.js</h1>
+                <p>
+                    专业的网页弹幕插件
+                </p>
+            </div>
+            <div class="bb-meta">
+                <ul class="bb-meta-list">
+                    <li>
+                        <span>Version 1.0</span>
+                    </li>
+                    <li>&middot;</li>
+                    <li>
+                        <a href="https://github.com/yaseng/jquery.barrager.js" target="_blank">下载</a>
+                    </li>
+                    <li>&middot;</li>
+                    <li>
+                        <a href="https://github.com/yaseng/jquery.barrager.js" target="_blank">Github</a>
+                    </li>
+     
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section class="bb-section">
+            <div class="lead-top">
+                <p class="lead">
+                    <b>Jquery.barrager.js</b>  是一款优雅的网页弹幕插件,支持显示图片,文字以及超链接。支持速度、高度、颜色、数量等自定义。
+                </p>
+                <div class="text-center">
+                    <p class="hidden-xs bb-code code-leader">
+                        $('<span class="bb-code-string">body</span>').barrager(<span class="bb-code-string">{'img':'barrager.png','info':'Hello world!'}</span>);</br>
+                    </p>
+                    <p>
+                        <button  class="bb-trigger btn btn-primary btn-lg  bb-light-blue"  onclick="run_example()"> 弹弹弹</button>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="custom" class="bb-section">
+            <div class="page-header">
+                <h2>自定义</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >文字</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" name="info" type="text" placeholder="弹幕文字信息"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >链接</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" name="href" type="text" placeholder="http://www.yaseng.org"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >延迟</label>
+                            <div class="col-sm-2">
+                                <input  class="form-control"  name="speed" type="text" placeholder="6" value="6" />
+                            </div>
+                      
+                            <label class="col-sm-2 control-label" >关闭按钮</label>
+                            <div class="col-sm-2">
+                                <input  class="form-control"  name="close" type="checkbox" checked   >
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >高度</label>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                  <input type="radio" name="bottomradio"   value="0" checked="checked"> 随机
+                                </label>
+                                <label class="radio-inline">                    
+                                   <input type="radio" name="bottomradio"   value="1" > 设置
+                                </label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input class="form-control" name="bottom" type="text" placeholder="70"  value="70"   />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >图片</label>
+                            <div class="col-sm-6">
+                                <label class="radio-inline">
+                                  <input type="radio" name="img"  value="cute.png" checked=""> cute.png
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="img"  value="haha.gif"> haha.gif
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="img"   value="none">  无图
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >颜色</label>
+                            <div class="col-sm-6">
+                                <input type="text" value="fff" name="color" class="pick-a-color form-control">
+                            </div>
+                        </div>
+                    </form>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" ></label>
+                            <div class="col-sm-3">
+                                <button  class="btn btn-primary   bb-light-blue"  onclick="run()"> 运行</button>
+                            </div>
+                                                        <div class="col-sm-3">
+                                <button  class="btn btn-warning   "  onclick="clear_barrage()"> 清除</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                        <textarea class="form-control" id="barrager-code" rows="14"  ></textarea>
+                </div>
+            </div>
+
+            
+        </section>
+        <section id="usage" class="bb-section">
+            <div class="page-header">
+                <h2>使用</h2>
+            </div>
+            <div>
+            <h3>发布弹幕</h3>
+            弹幕文字必选,图片,链接为空则不显示,其他的可选项有默认值,弹幕具体配置如下代码。
+            <pre class="brush: js;">
+            var item={
+               img:'static/heisenberg.png', //图片 
+               info:'弹幕文字信息', //文字 
+               href:'http://www.yaseng.org', //链接 
+               close:true, //显示关闭按钮 
+               speed:6, //延迟,单位秒,默认6 
+               bottom:70, //距离底部高度,单位px,默认随机 
+               color:'#fff', //颜色,默认白色 
+               old_ie_color:'#000000', //ie低版兼容色,不能与网页背景相同,默认黑色 
+             }
+            $('body').barrager(item);
+                        </pre>
+            <h3>清除所有弹幕</h3>
+             <pre class="brush: js;">
+             $.fn.barrager.removeAll();
+             </pre>
+             <h3> 兼容低版本ie </h3>
+             ie 浏览器小于9不兼容css 圆角,采用兼容样式,可单独设置弹幕的颜色,属性为old_ie_color,建议不要与网页主背景色相同。
+             兼容模式如图</br></br>
+             <img src="static/img/ie.png">
+
+            </div>
+        </section>
+        <section id="usage" class="bb-section">
+            <div class="page-header">
+                <h2>集成</h2>
+            </div>
+            <div>
+            <h3>发布弹幕</h3>
+            <section id="general-server" class="bb-section">
+             <h4> 通用后端 </h4>
+             读取服务端有两种模式,适应于不同的场景 </br>
+             1. 实时读取,隔x秒请求一次接口,获取一条弹幕,发送。 </br>
+             2. 一次读取完毕,隔x秒发送一条弹幕。</br>
+             第一种模式示范代码</br>
+             server 端(php)</br>
+             <pre class="brush: php">
+             <?php 
+            //数组里面可以自定义弹幕的所有属性。
+            $barrages=
+            array(
+                array(
+                    'info'   => '第一条弹幕',
+                    'img'    => 'static/img/heisenberg.png',
+                    'href'   => 'http://www.yaseng.org',
+
+                    ),
+                array(
+                    'info'   => '第二条弹幕',
+                    'img'    => 'static/img/yaseng.png',
+                    'href'   => 'http://www.yaseng.org',
+                    'color'  =>  '#ff6600'
+
+                    ),
+                array(
+                    'info'   => '第三条弹幕',
+                    'img'    => 'static/img/mj.gif',
+                    'href'   => 'http://www.yaseng.org',
+                    'bottom' => 70 ,
+
+                    ),
+                array(
+                    'info'   => '第四条弹幕',
+                    'href'   => 'http://www.yaseng.org',
+                    'close'  =>false,
+
+                    ),
+
+                );
+                
+            //随机输出一个 
+            echo  json_encode($barrages[array_rand($barrages)]);
+             </pre>
+             浏览器端获取json 弹幕数据,setInterval 调用,如有弹幕,就显示。</br>
+             代码如下
+             <pre class="brush: js">
+             //每条弹幕发送间隔
+            var looper_time=3*1000;
+            //是否首次执行
+            var run_once=true;
+            do_barrager();
+
+            function do_barrager(){
+              if(run_once){
+                  //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+                  looper=setInterval(do_barrager,looper_time);                
+                  run_once=false;
+              }
+              //获取
+              $.getJSON('server.php?mode=1',function(data){
+                  //是否有数据
+                  if(data.info){
+
+                       $('body').barrager(data);
+                  }
+
+              });
+            }               
+             </pre>
+
+             效果如图  
+             <img src="screenshot/demo_2.gif" class="img-responsive"  >
+              </br>
+
+            第二种模式示范代码。 </br>
+            server 端 (php)
+             <pre class="brush: php">
+                            //数组里面可以自定义弹幕的所有属性。
+            $barrages=
+            array(
+                array(
+                    'info'   => '第一条弹幕',
+                    'img'    => 'static/img/heisenberg.png',
+                    'href'   => 'http://www.yaseng.org',
+
+                    ),
+                array(
+                    'info'   => '第二条弹幕',
+                    'img'    => 'static/img/yaseng.png',
+                    'href'   => 'http://www.yaseng.org',
+                    'color'  =>  '#ff6600'
+
+                    ),
+                array(
+                    'info'   => '第三条弹幕',
+                    'img'    => 'static/img/mj.gif',
+                    'href'   => 'http://www.yaseng.org',
+                    'bottom' => 70 ,
+
+                    ),
+                array(
+                    'info'   => '第四条弹幕',
+                    'href'   => 'http://www.yaseng.org',
+                    'close'  =>false,
+
+                    ),
+
+                );
+
+
+            echo   json_encode($barrages);
+             </pre>
+            浏览器端 </br>
+              <pre class="brush: js">
+            $.ajaxSettings.async = false;
+            $.getJSON('server.php?mode=2',function(data){
+
+            //每条弹幕发送间隔
+            var looper_time=3*1000;
+            var items=data;
+            //弹幕总数
+            var total=data.length;
+            //是否首次执行
+            var run_once=true;
+            //弹幕索引
+            var index=0;
+            //先执行一次
+            barrager();
+            function  barrager(){
+
+             
+              if(run_once){
+                  //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+                  looper=setInterval(barrager,looper_time);                
+                  run_once=false;
+              }
+              //发布一个弹幕
+              $('body').barrager(items[index]);
+              //索引自增
+              index++;
+              //所有弹幕发布完毕，清除计时器。
+              if(index == total){
+
+                  clearInterval(looper);
+                  return false;
+              }
+
+              
+
+
+            }
+
+
+            });
+              </pre>
+              效果如图  
+             <img src="screenshot/demo_3.gif" class="img-responsive"  >
+              </br>
+
+
+
+      
+             </section>
+             <section id="discuz" class="bb-section">
+             <h4> Discuz </h4>
+             discuz 编写了一个插件,采用的是第二种模式。可以显示最近帖子,最新回复,或者指定帖子内容信息。并且可以在管理页面轻松设置各种弹幕参数。
+
+      
+             </section>
+             <section id="wordpress" class="bb-section">
+             <h4> Wordpress </h4>
+             暂无
+
+      
+             </section>
+
+            </div>
+        </section>
+         <section id="update" class="bb-section">
+         <h3> 版本更新 </h3>
+         <h4> 1.0 </h3>
+         实现网页弹幕基本功能
+
+
+         </section>
+         <section id="discuss" class="bb-section">
+         <h4> 讨论 </h4>
+         uauc 技术产品交流群:<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=674e19fafcde6bfc8f11207b7ab4af29bc40a8f38adbf3d47b310d68e1e3ce40"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="UaUc产品交流群" title="UaUc产品交流群"></a>
+
+
+         </section>
+      
+    </div>
+    <div class="well container">
+        <div style="float:right">
+            <a href="https://weibo.com/yasengberg" class="twitter-share-button"   data-via="makeusabrew" data-related="makeusabrew" data-size="large">Weibo</a>
+   
+        </div>
+        &copy; 2010-2016 <a href="http://www.uauc.net">UaUc.NeT</a>.
+        by &mdash; yaseng@uauc.net <a href="http://www.yaseng.org">yaseng.org</a>
+    </div>
+    <!-- JS dependencies -->
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/tinycolor-0.9.15.min.js"></script>  
+    <script type="text/javascript" src="dist/js/jquery.barrager.min.js"></script>
+    <script type="text/javascript" src="static/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="static/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="static/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+    <script type="text/javascript" src="static/pick-a-color/js/pick-a-color-1.2.3.min.js"></script>  
+    <script type="text/javascript">
+
+    String.prototype.format = function(args) {
+        var result = this;
+        if (arguments.length < 1) {
+            return result;
+        }
+        var data = arguments;        
+        if (arguments.length == 1 && typeof (args) == "object") {
+            data = args;
+        }
+        for (var key in data) {
+            var value = data[key];
+            if (undefined != value) {
+                result = result.replace("{" + key + "}", value);
+            }
+        }
+        return result;
+    }
+    var  barrager_code=
+        'var item={\n'+
+        "   img:'{img}', //图片 \n"+
+        "   info:'{info}', //文字 \n"+
+        "   href:'{href}', //链接 \n"+
+        "   close:{close}, //显示关闭按钮 \n"+
+        "   speed:{speed}, //延迟,单位秒,默认6 \n"+
+        "   bottom:{bottom}, //距离底部高度,单位px,默认随机 \n"+
+        "   color:'{color}', //颜色,默认白色 \n"+
+        "   old_ie_color:'{old_ie_color}', //ie低版兼容色,不能与网页背景相同,默认黑色 \n"+
+        " }\n"+
+        "$('body').barrager(item);"
+        ;
+
+    $(function() {
+
+        SyntaxHighlighter.all();
+        $(".pick-a-color").pickAColor();
+       
+        var  default_item={
+                'img':'static/heisenberg.png',
+                'info':'弹幕文字信息',
+                'href':'http://www.yaseng.org',
+                'close':true,
+                'speed':6,
+                'bottom':70,
+                'color':'#fff' ,
+                'old_ie_color':'#000000'
+            };
+        var item={'img':'static/img/heisenberg.png','href':'http://www.baidu.com','info':'Jquery.barrager.js 专业的网页弹幕插件'};
+        //item1={'href':'http://www.baidu.com','info':'这是一条很长很长的字幕','close':false};
+        $('#barrager-code').val(barrager_code.format(default_item));
+
+
+        $('body').barrager(item);
+
+      
+
+         //每条弹幕发送间隔
+        var looper_time=3*1000;
+        //是否首次执行
+        var run_once=true;
+       // do_barrager();
+
+        function do_barrager(){
+            if(run_once ){
+                //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+                looper=setInterval(do_barrager,looper_time);                
+                run_once=false;
+            }
+            //获取
+            $.getJSON('server.php?mode=1',function(data){
+                //是否有数据
+                if(data.info){
+
+                     $('body').barrager(data);
+                }
+
+            });
+        }
+
+        function barrager(){
+
+
+
+        }
+
+
+
+
+
+     
+
+    });
+ 
+    function  run(){
+
+        var  info=$('input[name=info]').val();
+        (info == '' ) ?  info='请填写弹幕文字' : info=info;
+        var  href=$('input[name=href]').val();
+        var  speed=parseInt($('input[name=speed]').val());
+        var  bottom=parseInt($('input[name=bottom]').val());
+        var  code=barrager_code;
+        if($('input:radio[name=bottomradio]:checked').val() == 0){
+        var  window_height=$(window).height()-150;
+        bottom=Math.floor(Math.random()*window_height+40);
+        code=code.replace("   bottom:{bottom}, //距离底部高度,单位px,默认随机 \n",'');
+
+        }
+
+        var  img=$('input:radio[name=img]:checked').val();
+        
+        if   (img == 'none' ){
+
+            code=code.replace("   img:'{img}', //图片 \n",'');
+        }
+
+
+
+ 
+        var  item={
+                'img':'static/img/'+img,
+                'info':info,
+                'href':href,
+                'close':true,
+                'speed':speed,
+                'bottom':bottom,
+                'color':'#'+$('input[name=color').val(),
+                'old_ie_color':'#'+$('input[name=color').val()
+
+
+
+                };
+
+         if(!$('input[name=close]').is(':checked')){
+
+
+            item.close=false;
+
+
+        }
+
+      
+        code=code.format(item);
+        console.log(code);
+        $('#barrager-code').val(code);
+        eval(code);
+
+
+    }
+
+    function  clear_barrage(){
+
+        $.fn.barrager.removeAll();
+    }
+
+
+
+
+
+    function  run_example(){
+
+    var example_item={'img':'static/img/heisenberg.png','info':'Hello world!'};
+    $('body').barrager(example_item);
+    return false;
+
+    }
+
+    </script>
+</body>
+</html>
