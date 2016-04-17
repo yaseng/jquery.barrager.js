@@ -37,7 +37,7 @@ $('body').barrager(item);
 ####  兼容低版本ie
 ie 浏览器小于9不兼容css 圆角,采用兼容样式,可单独设置弹幕的颜色,属性为old_ie_color,建议不要与网页主背景色相同。
 兼容模式效果图
-![ie](media/14604379311756/ie.png)￼
+![ie](https://raw.githubusercontent.com/yaseng/jquery.barrager.js/master/screenshot/ie.png)￼
 
 
 ### 集成
