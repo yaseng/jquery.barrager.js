@@ -9,6 +9,7 @@ jquery.barrager.js 专业的网页弹幕插件
       * [通用后端](#通用后端)
       * [Discuz](#discuz)
       * [WordPress](#wordpress)
+      * [hexo](#hexo)
   * [暂未实现](#暂未实现)  
 
 基本信息
@@ -235,16 +236,19 @@ function  barrager(){
 
 Discuz
 ------
-Discuz 编写了一个插件,采用的是第二种模式。可以显示最近帖子,最新回复,或者指定帖子内容信息。并且可以在管理页面轻松设置各种弹幕参数。
-弹幕管理界面截图
+discuz 弹幕插件是一款基于discuz 论坛专业的弹幕插件,使用弹幕显示帖子,回复,指定内容等,为论坛带来更多的趣味和互动性。支持速度、高度、颜色、数量等自定义,兼容各种主流浏览器 。
+插件地址: http://addon.discuz.com/?@uauc_barrager.plugin
 
 
-前台效果图
-
-插件地址
 WordPress
 ---------
-暂无
+jquery.barrager.js WordPress集成
+http://yaseng.org/jquery-barrager-js-for-wordpress.html
+
+hexo
+---------
+jquery.barrager.js hexo 集成
+http://yaseng.org/jquery-barrager-js-for-hexo.html
 
 
 ## 版本更新
