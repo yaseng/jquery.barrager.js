@@ -10,7 +10,9 @@ jquery.barrager.js 专业的网页弹幕插件
       * [Discuz](#discuz)
       * [WordPress](#wordpress)
       * [hexo](#hexo)
-  * [暂未实现](#暂未实现)  
+  * [版本更新](#版本更新) 
+      * [1.0](#1.0)
+      * [1.1](#1.1)
 
 基本信息
 ========
