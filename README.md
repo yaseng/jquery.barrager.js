@@ -258,7 +258,6 @@ http://yaseng.org/jquery-barrager-js-for-hexo.html
 实现弹幕功能
 
 todo
-========
 1. 多种皮肤选择
 2. 限制网页弹幕条数
 
