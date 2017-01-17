@@ -1,5 +1,6 @@
 /*!
  *@name     jquery.barrager.js
+ *@version  1.1
  *@author   yaseng@uauc.net
  *@url      https://github.com/yaseng/jquery.barrager.js
  */
@@ -10,7 +11,7 @@
 			close:true,
 			bottom: 0,
 			max: 10,
-			speed: 6,
+			speed: 8,
 			color: '#fff',
 			old_ie_color : '#000000'
 		}, barrage || {});
@@ -20,7 +21,9 @@
 		var id = '#' + barrager_id;
 		var div_barrager = $("<div class='barrage' id='" + barrager_id + "'></div>").appendTo($(this));
 		var window_height = $(window).height() - 100;
-		var this_height =  (window_height > this.height()) ? this.height() : window_height;     
+		var this_height =  (window_height > this.height()) ? this.height() : window_height;
+		var window_width = $(window).width() + 500;
+		var this_width =  (window_width > this.width()) ? this.width() : window_width;
 		var bottom = (barrage.bottom == 0) ? Math.floor(Math.random() * this_height + 40) : barrage.bottom;
 		div_barrager.css("bottom", bottom + "px");
 		div_barrager_box = $("<div class='barrage_box cl'></div>").appendTo(div_barrager);
@@ -30,7 +33,6 @@
 			var img = $("<img src='' >").appendTo(id + " .barrage_box .portrait");
 			img.attr('src', barrage.img);
 		}
-		
 		div_barrager_box.append(" <div class='z p'></div>");
 		if(barrage.close){
 
@@ -54,33 +56,25 @@
 		}
 		
 		var i = 0;
-		div_barrager.css('margin-right', i);
-		var looper = setInterval(barrager, barrage.speed);
+		div_barrager.css('margin-right', 0);
+		
+ 		$(id).animate({right:this_width},barrage.speed*1000,function(){
 
-		function barrager() {
-
-
-			var window_width = $(window).width() + 500;
-			if (i < window_width) {
-				i += 1;
-
-				$(id).css('margin-right', i);
-			} else {
-
-				$(id).remove();
- 				return false;
-			}
-
-		}
-
+			$(id).remove();
+		});
 
 		div_barrager_box.mouseover(function() {
-			clearInterval(looper);
+		     $(id).stop(true);
 		});
 
 		div_barrager_box.mouseout(function() {
-			looper = setInterval(barrager, barrage.speed);
-		});
+
+			$(id).animate({right:this_width},barrage.speed*1000,function(){
+
+				$(id).remove();
+			});
+
+ 		});
 
 		$(id+'.barrage .barrage_box .close').click(function(){
 
