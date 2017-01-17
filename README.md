@@ -264,4 +264,5 @@ http://yaseng.org/jquery-barrager-js-for-hexo.html
 1.1
 ----
 1.更改弹幕动画方案,再多弹幕也不会卡了。
+
 2.修正弹幕运行范围。
