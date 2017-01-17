@@ -18,7 +18,7 @@ jquery.barrager.js 专业的网页弹幕插件
 
 | 名称 | jquery.barrager.js |
 | -----|----|
-|版本|1.0|
+|版本|1.1|
 |项目主页|http://yaseng.github.io/jquery.barrager.js|
 |下载|https://github.com/yaseng/jquery.barrager.js|
 |github|https://github.com/yaseng/jquery.barrager.js|
@@ -41,7 +41,7 @@ var item={
    info:'弹幕文字信息', //文字 
    href:'http://www.yaseng.org', //链接 
    close:true, //显示关闭按钮 
-   speed:6, //延迟,单位秒,默认6 
+   speed:8, //延迟,单位秒,默认8
    bottom:70, //距离底部高度,单位px,默认随机 
    color:'#fff', //颜色,默认白色 
    old_ie_color:'#000000', //ie低版兼容色,不能与网页背景相同,默认黑色 
@@ -255,8 +255,11 @@ http://yaseng.org/jquery-barrager-js-for-hexo.html
 ### 1.0
 实现弹幕功能
 
-暂未实现
+todo
 ========
 1. 多种皮肤选择
 2. 限制网页弹幕条数
 
+### 1.1
+1.更改弹幕动画方案,再多弹幕也不会卡了。
+2.修正弹幕运行范围。
