@@ -253,13 +253,15 @@ jquery.barrager.js hexo 集成
 http://yaseng.org/jquery-barrager-js-for-hexo.html
 
 
-## 版本更新
+版本更新
+========
+
 1.0
----------
+---
 实现弹幕功能
  
 
 1.1
----------
+----
 1.更改弹幕动画方案,再多弹幕也不会卡了。
 2.修正弹幕运行范围。
