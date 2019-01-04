@@ -10,6 +10,7 @@
 		barrage = $.extend({
 			close:true,
 			bottom: 0,
+      fontsize: 14,
 			max: 10,
 			speed: 8,
 			color: '#fff',
@@ -43,7 +44,7 @@
 		var content = $("<a title='' href='' target='_blank'></a>").appendTo(id + " .barrage_box .p");
 		content.attr({
 			'href': barrage.href,
-			'id': barrage.id
+			'id': barrage.id,
 		}).empty().append(barrage.info);
 		if(navigator.userAgent.indexOf("MSIE 6.0")>0  ||  navigator.userAgent.indexOf("MSIE 7.0")>0 ||  navigator.userAgent.indexOf("MSIE 8.0")>0  ){
 
@@ -54,6 +55,8 @@
 			content.css('color', barrage.color);
 
 		}
+
+    content.css("font-size", barrage.fontsize + "px");
 		
 		var i = 0;
 		div_barrager.css('margin-right', 0);

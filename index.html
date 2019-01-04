@@ -101,6 +101,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-sm-2 control-label" >字体</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" name="fontsize" type="number" placeholder="弹幕文字大小"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-sm-2 control-label" >链接</label>
                             <div class="col-sm-6">
                                 <input class="form-control" name="href" type="text" placeholder="http://www.yaseng.org"/>
@@ -413,7 +419,7 @@
     <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/tinycolor-0.9.15.min.js"></script>  
-    <script type="text/javascript" src="dist/js/jquery.barrager.min.js"></script>
+    <script type="text/javascript" src="dist/js/jquery.barrager.js"></script>
     <script type="text/javascript" src="static/syntaxhighlighter/scripts/shCore.js"></script>
     <script type="text/javascript" src="static/syntaxhighlighter/scripts/shBrushJScript.js"></script>
     <script type="text/javascript" src="static/syntaxhighlighter/scripts/shBrushPhp.js"></script>
@@ -441,6 +447,7 @@
         'var item={\n'+
         "   img:'{img}', //图片 \n"+
         "   info:'{info}', //文字 \n"+
+        "   fontsize:'{fontsize}', //文字字体大小 \n"+
         "   href:'{href}', //链接 \n"+
         "   close:{close}, //显示关闭按钮 \n"+
         "   speed:{speed}, //延迟,单位秒,默认6 \n"+
@@ -460,6 +467,7 @@
                 'img':'static/heisenberg.png',
                 'info':'弹幕文字信息',
                 'href':'http://www.yaseng.org',
+                'fontsize': '32',
                 'close':true,
                 'speed':6,
                 'bottom':70,
@@ -516,6 +524,8 @@
 
         var  info=$('input[name=info]').val();
         (info == '' ) ?  info='请填写弹幕文字' : info=info;
+        var  fontsize=$('input[name=fontsize]').val();
+        (fontsize == '') ? fontsize='32': fontsize=fontsize;
         var  href=$('input[name=href]').val();
         var  speed=parseInt($('input[name=speed]').val());
         var  bottom=parseInt($('input[name=bottom]').val());
@@ -540,6 +550,7 @@
         var  item={
                 'img':'static/img/'+img,
                 'info':info,
+                'fontsize': fontsize,
                 'href':href,
                 'close':true,
                 'speed':speed,

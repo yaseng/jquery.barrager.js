@@ -13,6 +13,9 @@
     display: inline-block;
     border-radius: 25px;
     transition: all .3s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
  .barrage_box .portrait{
      display: inline-block;
